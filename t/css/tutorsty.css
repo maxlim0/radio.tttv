@@ -1,0 +1,21 @@
+.flexcroll {
+/* Typical fixed height and fixed width example */
+width: 640px;
+height: 250px;
+overflow: auto;
+border: solid 1px #C2C7CA;
+/* IE overflow fix, position must be relative or absolute*/
+position: relative;
+/*background-color: #E7EADE;*/
+}
+
+/* hesido: notice the addition of emptyspace holder, it should slightly be bigger than the containing div */
+/* and it should only be that big when fleXcroll is active for better degradation */
+.flexcrollactive .emptyspace {
+	height: 260px;
+	}
+
+/* you may optionally want to hide the scrollbars */
+#mycustomscroll .vscrollerbase {
+	visibility: hidden !important;
+}
