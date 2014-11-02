@@ -575,6 +575,10 @@ $(function () {
                 } else {
                     var action_group = '0';
                 }
+                if($('#sel_group_edit :selected').text() ==  $("#view_activ_group").text()){
+                    $("#view_activ_group").text(group_name);   
+                }
+
                 url = "vchat.php?check=200&group=" + group_id + "&group_name=" + group_name + "&action_group=" + action_group;
                 $.post(url, function (data) {
                     var obj = jQuery.parseJSON(data);
@@ -594,9 +598,6 @@ $(function () {
                             break
                         }
                 });
-                if($('#sel_group_edit :selected').text() ==  $("#view_activ_group").text()){
-                    $("#view_activ_group").text(group_name);   
-                }
                 $("#list3").setGridParam({url: "vchat.php?check=18", page: 1}).trigger('reloadGrid');
                 $("#dialog_edit_group").dialog("close");
                 return false;
