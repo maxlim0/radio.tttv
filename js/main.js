@@ -579,11 +579,12 @@ $(function () {
                     var action_group = '0';
                     var activ_group_id = '0';
                 }
-                /*
+                
                 if(sel_group_name ==  name_activ_gr){
-                    $("#view_activ_group").text(group_name);   
+                    $("#view_activ_group").text(group_name); 
+                    var activ_group_id = group_id;
                 }
-                */
+                
                 url = "vchat.php?check=200&group=" + group_id + "&group_name=" + group_name + "&action_group=" + action_group;
                 $.post(url, function (data) {
                     var obj = jQuery.parseJSON(data);
