@@ -473,10 +473,6 @@ $(function () {
                     alert("Введите корректный e-mail");
                     return false;
                 }
-                if(group_add == undefined){
-                    alert("Необходимо выбрать группу!");
-                    return false;
-                }
                 $("#list3").setGridParam({url: "vchat.php?check=3&name=" + name_add + "&fio=" + fio_add + "&phone=" + phone_add + "&pass=" + pass_add + "&mail=" + mail_add + "&group=" + group_add + "&role=" + role_add + "", page: 1}).trigger('reloadGrid');
                 $("#dialog_add_users").dialog("close");
                 //alert('Данные изменены проверьте информацию.');
@@ -587,10 +583,10 @@ $(function () {
                              alert('Ошибка редактирования группы!');
                             break
                             case 1:
+                             $("#view_activ_group").text(group_name);   
                              alert('Изменения выполнены. Группа активна.');
                             break
                             case 2:
-                             $('#view_activ_group').text(obj.name.trim());
                              alert('Изменения выполнены.');
                             break
                             case 3:
@@ -598,7 +594,6 @@ $(function () {
                             break
                         }
                 });
-
                 $("#list3").setGridParam({url: "vchat.php?check=18", page: 1}).trigger('reloadGrid');
                 $("#dialog_edit_group").dialog("close");
                 return false;
@@ -738,6 +733,7 @@ function f_UsersOptions(opt) {
             switch (opt) {
                 case '104':
                     $("#dialog_add_users").dialog("open");
+                    $("#sel_addgr_user").load('vchat.php?check=203&flg_edit=1', function () {});
                     break
                 case '107':
                     $("#list3").setGridParam({url: "vchat.php?check=18&group_flag=1", page: 1}).trigger('reloadGrid');

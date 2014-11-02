@@ -367,8 +367,7 @@ include("core/ip_geo_user.php");
 					<strong>Группа пользователя:</strong><span style='color: red'>*</span>
 					</td>
 					<td align='left'>
-                                            <select class='cforms_sel'  name='sel_addgr_user' id='sel_addgr_user'>
-                                            $view_group
+                                            <select class='cforms_sel'  name='sel_addgr_user' id='sel_addgr_user'>                                            
                                             </select>
                                         </td>
 				</tr>
