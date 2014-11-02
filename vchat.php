@@ -207,7 +207,7 @@ switch ($check) {
         echo $v_user->ViewUsers_jq($sidx, $sord, $page, $limit);
         break;
     case 18:
-        echo $v_user->ViewUsers_jq($sidx, $sord, $page, $limit, $group_flag);
+        echo $v_user->ViewUsers_jq($sidx, $sord, $page, $limit, $group_flag, $group);
         break;
     case 19:
         echo $v_user->regUsersCount($type_reg, $group_flag);

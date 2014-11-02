@@ -574,8 +574,10 @@ $(function () {
                 var name_activ_gr   = $("#view_activ_group").html();
                 if ($("#activ_group").prop("checked") == true) {
                     var action_group = '1';
+                    var activ_group_id = group_id;
                 } else {
                     var action_group = '0';
+                    var activ_group_id = '0';
                 }
                 /*
                 if(sel_group_name ==  name_activ_gr){
@@ -601,7 +603,8 @@ $(function () {
                             break
                         }
                 });
-                $("#list3").setGridParam({url: "vchat.php?check=18", page: 1}).trigger('reloadGrid');
+                
+                $("#list3").setGridParam({url: "vchat.php?check=18&group="+activ_group_id+"", page: 1}).trigger('reloadGrid');
                 $("#dialog_edit_group").dialog("close");
                 return false;
             });
