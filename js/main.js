@@ -568,14 +568,17 @@ $(function () {
     $("#work_edit_group")
             .button()
             .click(function () {
-                var group_id = $('#sel_group_edit :selected').val();
-                var group_name = $('#group_edit_name').val();
+                var group_id        = $('#sel_group_edit :selected').val();
+                var sel_group_name  = $('#sel_group_edit :selected').html()
+                var group_name      = $('#group_edit_name').val();
+                var name_activ_gr   = $("#view_activ_group").html();
                 if ($("#activ_group").prop("checked") == true) {
                     var action_group = '1';
                 } else {
                     var action_group = '0';
                 }
-                if($('#sel_group_edit :selected').text() ==  $("#view_activ_group").text()){
+                
+                if(sel_group_name ==  name_activ_gr){
                     $("#view_activ_group").text(group_name);   
                 }
 
