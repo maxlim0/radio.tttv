@@ -122,8 +122,7 @@ if (isset($_GET['pass'])) {
         $pass = time();
     }
 }
-$flg_edit = (isset($_GET['flg_edit'])) ? intval($_GET['flg_edit']) : false;
-        
+
 $chkview = new CheckView();
 $v_user = new BoardView();
 
@@ -225,7 +224,7 @@ switch ($check) {
         echo $v_user->delGroupUsers($group);
         break;
     case 203:
-        echo $v_user->ViewSelectGroup($flg_edit);
+        echo $v_user->ViewSelectGroup();
         break;
 }
 unset($v_user);

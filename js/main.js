@@ -594,6 +594,9 @@ $(function () {
                             break
                         }
                 });
+                if($('#sel_group_edit :selected').text() ==  $("#view_activ_group").text()){
+                    $("#view_activ_group").text(group_name);   
+                }
                 $("#list3").setGridParam({url: "vchat.php?check=18", page: 1}).trigger('reloadGrid');
                 $("#dialog_edit_group").dialog("close");
                 return false;
