@@ -39,7 +39,7 @@ $(function () {
 			if( sel_section == 107) var group_flag = '1';
             $('#reg_moder_conf').load('vchat.php?check=19&type_reg=2&group_flag='+group_flag, function () {});
             $('#reg_users_conf').load('vchat.php?check=19&type_reg=1&group_flag='+group_flag, function () {});
-		 
+			$('#sel_gr_section').val('');
             /*	
 			var su = $("#list3").getCol('moderation',false);
              var u_col = su.length;
