@@ -230,7 +230,9 @@ include("core/ip_geo_user.php");
                                     <a title='Отчет о пользователях'  href='report.php' id='user_manager_conf'>
                                     <img src='images/xls_i.png' /></a>
                             </div>
+							<input name='sel_gr_section' id='sel_gr_section' type='hidden' value=''>
         		</div>
+				
 			<table id='list3'></table>
 			<div id='pager3'></div>
                 </div>";

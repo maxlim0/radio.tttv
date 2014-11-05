@@ -23,7 +23,7 @@ $(function () {
             {name: 'country_reg', index: 'country_reg', width: 20},
             {name: 'city_reg', index: 'city_reg', width: 70},
             {name: 'dat_ses', index: 'dat_ses', width: 65},
-            {name: 'group', index: 'group', width: 50},
+            {name: 'id_group', index: 'id_group', width: 50},
             {name: 'role', index: 'role', width: 80}
         ],
         rowNum: 100,
@@ -34,24 +34,22 @@ $(function () {
         sortorder: "desc",
         loadonce: false,
         loadComplete: function () {
-            /*	var su = $("#list3").getCol('moderation',false);
+			var group_flag = '0';
+			var sel_section = $('#sel_gr_section').val();
+			if( sel_section == 107) var group_flag = '1';
+            $('#reg_moder_conf').load('vchat.php?check=19&type_reg=2&group_flag='+group_flag, function () {});
+            $('#reg_users_conf').load('vchat.php?check=19&type_reg=1&group_flag='+group_flag, function () {});
+		 
+            /*	
+			var su = $("#list3").getCol('moderation',false);
              var u_col = su.length;
              var u_mod = 0;
              for(var i = 0;i < su.length; i++){
              if(su[i] == ''){
-             u_mod=u_mod+1;
+				 u_mod=u_mod+1;
+				}
              }
-             }*/
-            
-            //alert(su);
-            /*
-            $.post('vchat.php', {check: 19}, function (data) {
-                document.getElementById("reg_moder_conf").innerHTML = data;
-            });
-            */
-            $('#reg_moder_conf').load('vchat.php?check=19&type_reg=2', function () {});
-            $('#reg_users_conf').load('vchat.php?check=19&type_reg=1', function () {});
-            /*
+			//alert(su);            
             var su = $("#list3").jqGrid('getGridParam', 'records');
             document.getElementById("reg_users_conf").innerHTML = su;
             */
@@ -59,7 +57,7 @@ $(function () {
         multiselect: true
     }).jqGrid('navGrid', '#pager3', {edit: false, add: false, del: false, search: false});
 
-//$("#list3").jqGrid('navGrid','#pager3',{edit:false,add:false,del:false});
+	//$("#list3").jqGrid('navGrid','#pager3',{edit:false,add:false,del:false});
     /*
      $("#table_us").tablesorter({
      headers: {
@@ -71,7 +69,8 @@ $(function () {
      }
      }); 
      */
-    $("#client_fio").focus(function () {
+    
+	$("#client_fio").focus(function () {
         if (this.value == this.defaultValue) {
             this.value = '';
             $(this).removeClass("cforms_reg_val").addClass("cforms_reg");
@@ -736,7 +735,7 @@ function UserManagerView() {
     window.open('inf/user_manager.php', '', 'Toolbar=0,Location=0,Directories=0,Status=0,Menubar=0,Scrollbars=1,Resizable=1,Width=950,Height=800,screenX=200,screenY=400');
 }
 function f_UsersOptions(opt) {
-
+	
     var arr_id = jQuery("#list3").jqGrid('getGridParam', 'selarrrow');
 
     if (arr_id == '') {
@@ -747,6 +746,7 @@ function f_UsersOptions(opt) {
                     $("#sel_addgr_user").load('vchat.php?check=203&flg_edit=1', function () {});
                     break
                 case '107':
+					$('#sel_gr_section').val('107');
                     $("#list3").setGridParam({url: "vchat.php?check=18&group_flag=1", page: 1}).trigger('reloadGrid');
                     break
                 case '200': //Edit group users
