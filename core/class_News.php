@@ -327,7 +327,7 @@ class BoardView {
 			$qw=self::$DB->query($sql);
 			$text_file .=iconv("utf-8", "windows-1251","Логин;Фио;Номер телефона;Пароль;E-mail;Дата регистрации;IP регистрации;Страна регистрации;Город регистрации;Дата регистрации;Группа;\r\n");
 				while($re = self::$DB->fetch_array($qw)){
-					$text_file .= iconv("utf-8", "windows-1251", $re['name']).';'.iconv("utf-8", "windows-1251", $re['fio']).';="'.iconv("utf-8", "windows-1251", $re['phone']).'";="'.iconv("utf-8", "windows-1251", $re['upass']).'";'.iconv("utf-8", "windows-1251", $re['mail']).';'.iconv("utf-8", "windows-1251",$re['dat_reg']).';'.iconv("utf-8", "windows-1251",$re['ip_reg']).';'.iconv("utf-8", "windows-1251",$re['country_reg']).';'.iconv("utf-8", "windows-1251",$re['city_reg']).';'.iconv("utf-8", "windows-1251",$re['dat_reg']).';'.iconv("utf-8", "windows-1251",$re['name_group']).';\r\n';
+					$text_file .= iconv("utf-8", "windows-1251", $re['name']).';'.iconv("utf-8", "windows-1251", $re['fio']).';="'.iconv("utf-8", "windows-1251", $re['phone']).'";="'.iconv("utf-8", "windows-1251", $re['upass']).'";'.iconv("utf-8", "windows-1251", $re['mail']).';'.iconv("utf-8", "windows-1251",$re['dat_reg']).';'.iconv("utf-8", "windows-1251",$re['ip_reg']).';'.iconv("utf-8", "windows-1251",$re['country_reg']).';'.iconv("utf-8", "windows-1251",$re['city_reg']).';'.iconv("utf-8", "windows-1251",$re['dat_reg']).';'.iconv("utf-8", "windows-1251",$re['name_group']).";\r\n";
 				}
 					fwrite($hand, $text_file);
 					fclose($hand);
