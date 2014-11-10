@@ -63,7 +63,7 @@ $limit = $_GET['rows']; // get how many rows we want to have into the grid
 if (isset($_GET['sidx'])) {
     $sidx = $_GET['sidx'];
 } else {
-    $sidx = 'name';
+    $sidx = 'dat_reg';
 }
 if (isset($_GET['sord'])) {
     $sord = $_GET['sord'];
