@@ -130,7 +130,7 @@ class BoardView {
                 $view_only_activ = "&& id_group = (SELECT id_group FROM $this->db_group_users WHERE activ = '1')";
                 if($id_group != false ) $view_only_activ = "&& id_group = '$id_group'";
                 if($group_flag) $view_only_activ = "";
-				if(!$sidx) $sidx = 'name';	// Если не указано поле сортировки, то производить сортировку по первому полю
+				if(!$sidx) $sidx = 'dat_reg';	// Если не указано поле сортировки, то производить сортировку по первому полю
 					//суммарное кол-во записей в таблице
 					$sql = "SELECT COUNT(*) AS count FROM $this->db_user_table WHERE role IN (1,2,4) "
                                                 . " $view_only_activ"
