@@ -29,7 +29,7 @@ $(function () {
         rowNum: 100,
         rowList: [30, 50, 100, 200, 300, 400, 500, 600, 800, 1000],
         pager: '#pager3',
-        sortname: 'name',
+        sortname: 'dat_reg',
         viewrecords: true,
         sortorder: "desc",
         loadonce: false,
